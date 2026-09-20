@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 220 64" role="img" aria-label="NextCar Service &amp; Performance">
+  <style>
+    .w{font-family:'Barlow Condensed','Arial Narrow',sans-serif;font-weight:800;font-style:italic;font-size:42px;letter-spacing:-1px}
+    .t{font-family:'Barlow Condensed','Arial Narrow',sans-serif;font-weight:500;font-size:11px;letter-spacing:2.2px}
+  </style>
+  <text x="2" y="38" class="w"><tspan fill="#e9e9eb">NEXT</tspan><tspan fill="#e24942">CAR</tspan></text>
+  <text x="2" y="58" class="t" fill="#9e9ea2">SERVICE &amp; PERFORMANCE</text>
+</svg>

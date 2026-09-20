@@ -1,0 +1,63 @@
+/* NextCar design tokens. Source: nextcar.is production CSS (Sept 2026).
+   Dark-first. One signal colour (workshop red). Hex values are the sRGB
+   fallbacks the live site ships next to its lab() values. */
+@import url("https://fonts.googleapis.com/css2?family=Barlow:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Barlow+Condensed:ital,wght@0,500;0,600;0,700;0,800;1,700;1,800&display=swap");
+
+:root {
+  /* Surfaces */
+  --nc-background: #0c0c0e;   /* page */
+  --nc-card: #131416;         /* cards, tiles, inputs on dark */
+  --nc-muted: #1a1a1d;        /* raised / popover */
+  --nc-accent: #212124;       /* hover fill on dark */
+  --nc-border: #262629;       /* all hairlines and inputs */
+
+  /* Text */
+  --nc-foreground: #e9e9eb;        /* headings, primary text */
+  --nc-muted-foreground: #9e9ea2;  /* body copy, nav idle, captions */
+  --nc-on-primary: #f5f5f5;
+
+  /* Brand */
+  --nc-primary: #c9302d;       /* buttons, icons, active nav, eyebrows */
+  --nc-primary-text: #e24942;  /* red used as TEXT on dark (better contrast) */
+  --nc-primary-glow: color-mix(in oklab, #c9302d 35%, transparent);
+
+  /* Status */
+  --nc-error: #eb827b;
+  --nc-warning: #edb200;
+  --nc-info: #90c5ff;
+
+  /* Type */
+  --nc-font-display: "Barlow Condensed", "Arial Narrow", system-ui, sans-serif;
+  --nc-font-sans: "Barlow", system-ui, sans-serif;
+
+  --nc-text-xs: 0.75rem;   /* 12 eyebrows, small buttons */
+  --nc-text-sm: 0.875rem;  /* 14 buttons, card titles */
+  --nc-text-base: 1rem;    /* 16 body */
+  --nc-text-lg: 1.125rem;
+  --nc-text-2xl: 1.5rem;   /* 24 */
+  --nc-text-3xl: 1.875rem; /* 30 section titles */
+  --nc-text-4xl: 2.25rem;  /* 36 */
+  --nc-text-5xl: 3rem;     /* 48 hero */
+  --nc-text-6xl: 3.75rem;  /* 60 hero xl */
+
+  --nc-tracking-display: 0.025em; /* headings (tracking-wide) */
+  --nc-tracking-nav: 0.1em;       /* nav links */
+  --nc-tracking-eyebrow: 0.18em;  /* eyebrow labels */
+  --nc-leading-hero: 1.08;
+
+  /* Shape */
+  --nc-radius: 0.3rem;   /* inputs, small UI only */
+  --nc-radius-none: 0;   /* buttons, cards, tiles: square */
+  --nc-radius-pill: 9999px; /* floating chat button only */
+
+  /* Layout */
+  --nc-container: 86rem;
+  --nc-gutter: 1rem;
+  --nc-gutter-lg: 2rem;
+  --nc-section-y: 5rem;
+
+  /* Motion */
+  --nc-ease: cubic-bezier(0.4, 0, 0.2, 1);
+  --nc-ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
+  --nc-duration: 0.15s;
+}
