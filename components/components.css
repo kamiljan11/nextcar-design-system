@@ -1,0 +1,226 @@
+/* NextCar components. Requires tokens/tokens.css.
+   Class names are plain so Claude Design / any HTML can use them. */
+
+*, *::before, *::after { box-sizing: border-box; }
+body {
+  margin: 0;
+  background: var(--nc-background);
+  color: var(--nc-foreground);
+  font-family: var(--nc-font-sans);
+  font-size: var(--nc-text-base);
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+img { max-width: 100%; display: block; }
+
+/* ---------- Layout ---------- */
+.nc-container { width: 100%; max-width: var(--nc-container); margin-inline: auto; padding-inline: var(--nc-gutter); }
+@media (min-width: 48rem) { .nc-container { padding-inline: var(--nc-gutter-lg); } }
+.nc-section { padding-block: var(--nc-section-y); border-bottom: 1px solid var(--nc-border); }
+.nc-section--tinted { background: color-mix(in oklab, var(--nc-card) 40%, transparent); }
+
+/* ---------- Typography ---------- */
+.nc-display, .nc-h1, .nc-h2, .nc-h3, .nc-h4 {
+  font-family: var(--nc-font-display);
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: var(--nc-tracking-display);
+  color: var(--nc-foreground);
+  margin: 0;
+  text-wrap: balance;
+}
+.nc-h1 { font-size: var(--nc-text-4xl); line-height: var(--nc-leading-hero); }
+@media (min-width: 48rem) { .nc-h1 { font-size: var(--nc-text-5xl); } }
+@media (min-width: 80rem) { .nc-h1 { font-size: var(--nc-text-6xl); } }
+.nc-h2 { font-size: var(--nc-text-2xl); line-height: 1.2; }
+@media (min-width: 40rem) { .nc-h2 { font-size: var(--nc-text-3xl); } }
+.nc-h3 { font-size: var(--nc-text-base); line-height: 1.5; }
+.nc-h4 { font-size: var(--nc-text-sm); line-height: 1.43; }
+
+/* Second hero line: italic, red. "Next level performance." */
+.nc-accent-line { color: var(--nc-primary-text); font-style: italic; display: block; }
+
+.nc-eyebrow {
+  font-family: var(--nc-font-sans);
+  font-size: var(--nc-text-xs);
+  font-weight: 700;
+  letter-spacing: var(--nc-tracking-eyebrow);
+  text-transform: uppercase;
+  color: var(--nc-primary-text);
+  margin: 0 0 0.75rem;
+}
+.nc-eyebrow--neutral { color: var(--nc-foreground); }
+.nc-lead { color: var(--nc-muted-foreground); font-size: var(--nc-text-base); max-width: 28rem; text-wrap: pretty; }
+.nc-body { color: var(--nc-muted-foreground); font-size: var(--nc-text-sm); line-height: 1.43; }
+.nc-fine { color: var(--nc-muted-foreground); font-size: var(--nc-text-xs); }
+
+/* ---------- Wordmark ---------- */
+.nc-logo { display: inline-flex; flex-direction: column; line-height: 1; text-decoration: none; font-family: var(--nc-font-display); }
+.nc-logo__word { font-size: 1.7em; font-weight: 800; font-style: italic; letter-spacing: -0.025em; color: var(--nc-foreground); }
+.nc-logo__word b { color: var(--nc-primary-text); font-weight: 800; }
+.nc-logo__tag { margin-top: 0.35em; font-size: 0.62em; font-weight: 500; letter-spacing: 0.2em; text-transform: uppercase; color: var(--nc-muted-foreground); }
+
+/* ---------- Buttons (square corners, uppercase, bold) ---------- */
+.nc-btn {
+  display: inline-flex; align-items: center; justify-content: center; gap: 0.625rem;
+  min-height: 3rem; padding: 0 1.75rem;
+  font-family: var(--nc-font-sans); font-size: var(--nc-text-sm); font-weight: 700;
+  letter-spacing: var(--nc-tracking-display); text-transform: uppercase;
+  border-radius: var(--nc-radius-none); border: 1px solid transparent;
+  text-decoration: none; cursor: pointer; white-space: nowrap;
+  transition: background-color var(--nc-duration) var(--nc-ease), border-color var(--nc-duration) var(--nc-ease), color var(--nc-duration) var(--nc-ease);
+}
+.nc-btn:focus-visible { outline: 2px solid var(--nc-primary-text); outline-offset: 2px; }
+.nc-btn svg { width: 1rem; height: 1rem; transition: transform .2s var(--nc-ease); }
+.nc-btn:hover svg { transform: translateX(3px); }
+
+.nc-btn--primary { background: var(--nc-primary); color: var(--nc-on-primary); }
+.nc-btn--primary:hover { background: color-mix(in oklab, var(--nc-primary) 88%, white); }
+.nc-btn--outline { background: transparent; color: var(--nc-foreground); border-color: var(--nc-foreground); }
+.nc-btn--outline:hover { border-color: var(--nc-primary); color: var(--nc-primary-text); }
+.nc-btn--outline-red { background: transparent; color: var(--nc-primary-text); border-color: var(--nc-primary); }
+.nc-btn--outline-red:hover { background: var(--nc-primary); color: var(--nc-on-primary); }
+.nc-btn--ghost { background: transparent; color: var(--nc-muted-foreground); border-color: var(--nc-border); }
+.nc-btn--ghost:hover { color: var(--nc-foreground); border-color: var(--nc-primary); }
+.nc-btn--sm { min-height: 2.75rem; padding: 0 1.5rem; font-size: var(--nc-text-xs); }
+
+/* Text link with arrow: "SHOP NOW ->" */
+.nc-link-arrow {
+  display: inline-flex; align-items: center; gap: 0.5rem;
+  font-size: var(--nc-text-xs); font-weight: 700; letter-spacing: var(--nc-tracking-display);
+  text-transform: uppercase; color: var(--nc-primary-text); text-decoration: none;
+}
+.nc-link-arrow svg { width: 1rem; height: 1rem; transition: transform .2s var(--nc-ease); }
+.nc-link-arrow:hover svg { transform: translateX(3px); }
+
+/* Floating help button: the ONLY rounded pill in the system */
+.nc-fab {
+  position: fixed; right: 1rem; bottom: 1rem; z-index: 50;
+  display: inline-flex; align-items: center; gap: 0.5rem; padding: 0.9rem 1.4rem;
+  border-radius: var(--nc-radius-pill); background: var(--nc-primary); color: var(--nc-on-primary);
+  font-weight: 700; font-size: var(--nc-text-sm); text-transform: uppercase; letter-spacing: var(--nc-tracking-display);
+  text-decoration: none; box-shadow: 0 10px 30px -10px var(--nc-primary-glow);
+}
+
+/* ---------- Header / nav ---------- */
+.nc-header { border-bottom: 1px solid var(--nc-border); background: var(--nc-background); position: sticky; top: 0; z-index: 40; }
+.nc-header__inner { display: flex; align-items: flex-end; justify-content: space-between; gap: 2rem; padding-top: 1.5rem; }
+.nc-nav { display: flex; gap: 1rem; }
+.nc-nav a {
+  font-family: var(--nc-font-display); font-size: 13px; font-weight: 600;
+  letter-spacing: var(--nc-tracking-nav); text-transform: uppercase;
+  color: var(--nc-muted-foreground); text-decoration: none;
+  padding: 0.5rem 0 1.5rem; border-bottom: 2px solid transparent;
+}
+.nc-nav a:hover { color: var(--nc-foreground); }
+.nc-nav a[aria-current="page"] { color: var(--nc-primary-text); border-bottom-color: var(--nc-primary); }
+@media (max-width: 63.99rem) { .nc-nav { display: none; } }
+
+/* ---------- Hero ---------- */
+.nc-hero { position: relative; min-height: 38rem; display: flex; align-items: center; overflow: hidden; border-bottom: 1px solid var(--nc-border); }
+.nc-hero__media { position: absolute; inset: 0; background-size: cover; background-position: center; }
+.nc-hero__media::after { content: ""; position: absolute; inset: 0;
+  background: linear-gradient(90deg, rgb(12 12 14 / .92) 0%, rgb(12 12 14 / .65) 45%, rgb(12 12 14 / .15) 100%); }
+@media (max-width: 47.99rem) { .nc-hero__media::after { background: linear-gradient(180deg, rgb(12 12 14 / .75), rgb(12 12 14 / .9)); } }
+.nc-hero__content { position: relative; display: flex; flex-direction: column; gap: 1.5rem; padding-block: 5rem; }
+.nc-hero__actions { display: flex; flex-wrap: wrap; gap: 1rem; }
+
+/* ---------- Service strip: bordered columns, red line icon, condensed title ---------- */
+.nc-service-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(14rem, 1fr)); border-top: 1px solid var(--nc-border); border-bottom: 1px solid var(--nc-border); }
+.nc-service { padding: 2rem 1.75rem 3rem; border-right: 1px solid var(--nc-border); }
+.nc-service svg { width: 2.25rem; height: 2.25rem; color: var(--nc-primary); stroke-width: 1.5; }
+.nc-service .nc-h3 { margin: 1.5rem 0 0.75rem; }
+
+/* ---------- Product card ---------- */
+.nc-card {
+  background: var(--nc-card); border: 1px solid var(--nc-border); border-radius: var(--nc-radius-none);
+  padding: 1rem; display: flex; flex-direction: column; gap: 0.75rem;
+}
+.nc-card__img { aspect-ratio: 4/3; object-fit: contain; }
+.nc-card .nc-h4 { margin-top: 0.25rem; }
+
+/* Lift on hover (site class: .unos) */
+.nc-lift { transition: transform .28s var(--nc-ease-out-expo), box-shadow .28s; }
+.nc-lift:hover { transform: translateY(-4px); box-shadow: 0 12px 32px -18px var(--nc-primary); }
+
+/* Rotating red light around the border on hover (site class: .ramka-swiatlo) */
+@property --nc-angle { syntax: "<angle>"; initial-value: 0deg; inherits: false; }
+.nc-frame-light { position: relative; }
+.nc-frame-light::after {
+  content: ""; position: absolute; inset: 0; padding: 1px; pointer-events: none; opacity: 0;
+  background: conic-gradient(from var(--nc-angle), transparent 0deg 300deg, color-mix(in oklab, var(--nc-primary) 70%, transparent) 340deg, transparent 360deg);
+  -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+  -webkit-mask-composite: xor; mask-composite: exclude;
+  transition: opacity .35s;
+}
+.nc-frame-light:hover::after, .nc-frame-light:focus-within::after { opacity: 1; animation: nc-frame-spin 2.6s linear infinite; }
+@keyframes nc-frame-spin { to { --nc-angle: 360deg; } }
+
+/* ---------- Split feature: text panel + full-bleed photo ---------- */
+.nc-split { display: grid; grid-template-columns: 1fr; border-bottom: 1px solid var(--nc-border); }
+@media (min-width: 64rem) { .nc-split { grid-template-columns: repeat(4, 1fr); } }
+.nc-split__text { padding: 3rem 2.5rem; display: flex; flex-direction: column; justify-content: center; gap: 1.25rem; }
+.nc-split__img { min-height: 22rem; background-size: cover; background-position: center; }
+
+/* ---------- Trust row ---------- */
+.nc-trust { display: grid; grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr)); gap: 2rem; padding-block: 3rem; }
+.nc-trust__item { display: flex; gap: 1rem; align-items: flex-start; }
+.nc-trust__item svg { flex: none; width: 2.25rem; height: 2.25rem; color: var(--nc-primary); stroke-width: 1.5; }
+
+/* ---------- Boxed stat / announcement (red outline, condensed text) ---------- */
+.nc-badge-box {
+  display: inline-block; padding: 0.75rem 1.25rem; border: 1px solid var(--nc-primary);
+  font-family: var(--nc-font-display); font-weight: 700; font-size: var(--nc-text-2xl);
+  letter-spacing: var(--nc-tracking-eyebrow); text-transform: uppercase; color: var(--nc-primary-text);
+}
+
+/* ---------- FAQ accordion ---------- */
+.nc-faq details { border-bottom: 1px solid var(--nc-border); }
+.nc-faq summary {
+  list-style: none; cursor: pointer; min-height: 3.5rem; padding: 1rem 0;
+  display: flex; justify-content: space-between; align-items: center; gap: 1rem;
+  font-family: var(--nc-font-display); font-weight: 700; font-size: var(--nc-text-sm);
+  letter-spacing: var(--nc-tracking-display); text-transform: uppercase;
+}
+.nc-faq summary::-webkit-details-marker { display: none; }
+.nc-faq summary::after { content: "+"; color: var(--nc-primary-text); font-size: 1.25rem; font-family: var(--nc-font-sans); }
+.nc-faq details[open] summary::after { content: "\2212"; }
+.nc-faq details p { color: var(--nc-muted-foreground); margin: 0 0 1.25rem; max-width: 48rem; }
+
+/* ---------- Forms ---------- */
+.nc-input {
+  min-height: 2.75rem; padding: 0 1rem; width: 100%;
+  background: var(--nc-card); color: var(--nc-foreground);
+  border: 1px solid var(--nc-border); border-radius: var(--nc-radius);
+  font: inherit; font-size: var(--nc-text-sm);
+}
+.nc-input::placeholder { color: var(--nc-muted-foreground); }
+.nc-input:focus-visible { outline: 2px solid var(--nc-primary); outline-offset: 0; border-color: var(--nc-primary); }
+
+/* ---------- Brand marquee (partner logos, greyscale) ---------- */
+.nc-marquee { overflow: hidden; border-block: 1px solid var(--nc-border); background: var(--nc-card); padding-block: 1.5rem; }
+.nc-marquee__track { display: flex; gap: 4rem; width: max-content; animation: nc-marquee 40s linear infinite; }
+.nc-marquee__track > * { filter: grayscale(1) brightness(1.6); opacity: .55; }
+@keyframes nc-marquee { to { transform: translateX(-50%); } }
+
+/* ---------- Footer ---------- */
+.nc-footer { padding-block: 4rem; }
+.nc-footer h4 { font-family: var(--nc-font-display); font-size: var(--nc-text-sm); letter-spacing: var(--nc-tracking-eyebrow); text-transform: uppercase; color: var(--nc-primary-text); margin: 0 0 1.25rem; }
+.nc-footer a { color: var(--nc-muted-foreground); text-decoration: none; font-size: var(--nc-text-sm); }
+.nc-footer a:hover { color: var(--nc-foreground); }
+
+/* ---------- Motion ---------- */
+/* Primary hero CTA breathes (site: .cta-glow / cta-oddycha) */
+.nc-glow { animation: nc-breathe 3.2s ease-in-out infinite; }
+@keyframes nc-breathe {
+  0%, 100% { box-shadow: 0 0 0 0 color-mix(in oklab, var(--nc-primary) 45%, transparent); }
+  50% { box-shadow: 0 0 22px 2px color-mix(in oklab, var(--nc-primary) 35%, transparent); }
+}
+/* Entrance: slide up 18px + fade (site: wjazd-w-gore) */
+.nc-rise { animation: nc-rise .7s var(--nc-ease-out-expo) both; }
+@keyframes nc-rise { from { opacity: 0; transform: translateY(18px); } to { opacity: 1; transform: none; } }
+
+@media (prefers-reduced-motion: reduce) {
+  .nc-glow, .nc-rise, .nc-marquee__track, .nc-frame-light::after { animation: none !important; }
+  .nc-lift:hover { transform: none; }
+}

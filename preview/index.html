@@ -1,0 +1,133 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>NextCar Design System</title>
+<link rel="stylesheet" href="../tokens/tokens.css">
+<link rel="stylesheet" href="../components/components.css">
+<style>
+  .ds-block { padding-block: 3rem; border-bottom: 1px solid var(--nc-border); }
+  .ds-label { font-family: ui-monospace, monospace; font-size: 11px; color: var(--nc-muted-foreground); margin-bottom: 1rem; }
+  .ds-swatches { display: grid; grid-template-columns: repeat(auto-fill, minmax(9rem, 1fr)); gap: 1rem; }
+  .ds-swatch { border: 1px solid var(--nc-border); }
+  .ds-swatch div { height: 4.5rem; }
+  .ds-swatch p { margin: 0; padding: .6rem .75rem; font-size: 12px; color: var(--nc-muted-foreground); }
+  .ds-swatch b { display: block; color: var(--nc-foreground); font-weight: 600; }
+  .ds-row { display: flex; flex-wrap: wrap; gap: 1rem; align-items: center; }
+  .ds-cards { display: grid; grid-template-columns: repeat(auto-fill, minmax(11rem, 1fr)); gap: 1rem; }
+</style>
+</head>
+<body>
+
+<header class="nc-header">
+  <div class="nc-container nc-header__inner">
+    <a class="nc-logo" href="#" style="padding-bottom:1rem"><span class="nc-logo__word">NEXT<b>CAR</b></span><span class="nc-logo__tag">Service &amp; Performance</span></a>
+    <nav class="nc-nav" aria-label="Main">
+      <a href="#" aria-current="page">Home</a><a href="#">About us</a><a href="#">Services</a><a href="#">Equipment</a><a href="#">Shop</a><a href="#">Showroom</a><a href="#">Contact</a>
+    </nav>
+    <span></span>
+  </div>
+</header>
+
+<section class="nc-hero">
+  <div class="nc-hero__media" style="background-image:url(https://nextcar.is/brand/hero-workshop.jpg)"></div>
+  <div class="nc-container nc-hero__content">
+    <h1 class="nc-h1 nc-rise">Next level 5D alignment.<span class="nc-accent-line">Next level performance.</span></h1>
+    <p class="nc-lead nc-rise">Professional car service, advanced diagnostics, engine solutions and premium workshop equipment.</p>
+    <div class="nc-hero__actions nc-rise">
+      <a class="nc-btn nc-btn--primary nc-glow" href="#">Our services <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+      <a class="nc-btn nc-btn--outline" href="#">Our equipment <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+    </div>
+  </div>
+</section>
+
+<main class="nc-container">
+
+  <div class="ds-block">
+    <p class="ds-label">COLOR</p>
+    <div class="ds-swatches">
+      <div class="ds-swatch"><div style="background:#0c0c0e"></div><p><b>background</b>#0c0c0e</p></div>
+      <div class="ds-swatch"><div style="background:#131416"></div><p><b>card</b>#131416</p></div>
+      <div class="ds-swatch"><div style="background:#1a1a1d"></div><p><b>muted</b>#1a1a1d</p></div>
+      <div class="ds-swatch"><div style="background:#262629"></div><p><b>border</b>#262629</p></div>
+      <div class="ds-swatch"><div style="background:#e9e9eb"></div><p><b>foreground</b>#e9e9eb</p></div>
+      <div class="ds-swatch"><div style="background:#9e9ea2"></div><p><b>muted-foreground</b>#9e9ea2</p></div>
+      <div class="ds-swatch"><div style="background:#c9302d"></div><p><b>primary</b>#c9302d</p></div>
+      <div class="ds-swatch"><div style="background:#e24942"></div><p><b>primary-text</b>#e24942</p></div>
+    </div>
+  </div>
+
+  <div class="ds-block">
+    <p class="ds-label">TYPE: Barlow Condensed (display) + Barlow (text)</p>
+    <p class="nc-eyebrow">Equipment &amp; solutions</p>
+    <h2 class="nc-h2">Everything your workshop needs</h2>
+    <p class="nc-lead" style="margin-top:1rem">From engine repairs to advanced diagnostics, we keep your performance at its best.</p>
+    <h3 class="nc-h3" style="margin-top:2rem">Engine service</h3>
+    <p class="nc-body">Complete engine repair, rebuilds and performance optimization.</p>
+  </div>
+
+  <div class="ds-block">
+    <p class="ds-label">BUTTONS: square, uppercase, bold</p>
+    <div class="ds-row">
+      <a class="nc-btn nc-btn--primary" href="#">Learn more <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+      <a class="nc-btn nc-btn--outline" href="#">Our equipment</a>
+      <a class="nc-btn nc-btn--outline-red nc-btn--sm" href="#">View all products</a>
+      <a class="nc-btn nc-btn--ghost nc-btn--sm" href="#">Browse the shop</a>
+      <a class="nc-link-arrow" href="#">Shop now <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+      <span class="nc-badge-box">November 2026</span>
+    </div>
+  </div>
+</main>
+
+<div class="nc-service-grid">
+  <div class="nc-service"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><circle cx="12" cy="12" r="8"/><path d="M12 2v3M12 19v3M2 12h3M19 12h3"/></svg><h3 class="nc-h3">5D alignment</h3><p class="nc-body">Next level 5D alignment for maximum precision and safety.</p></div>
+  <div class="nc-service"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="16" height="12" rx="1"/><path d="M5 10h3l2-3 2 5 2-2h2M8 20h6"/></svg><h3 class="nc-h3">Diagnostics</h3><p class="nc-body">Advanced diagnostic tools for all makes and models.</p></div>
+  <div class="nc-service"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="3"/><path d="M12 3v6M12 15v6M3 12h6M15 12h6"/></svg><h3 class="nc-h3">Tire service</h3><p class="nc-body">Tire fitting, balancing and complete tire service.</p></div>
+  <div class="nc-service"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><circle cx="8" cy="21" r="1"/><circle cx="19" cy="21" r="1"/><path d="M2 2h3l2.7 12.4a2 2 0 0 0 2 1.6h8.8a2 2 0 0 0 2-1.6L22 7H6"/></svg><h3 class="nc-h3">Shop</h3><p class="nc-body">Online store with the best workshop equipment.</p></div>
+</div>
+
+<section class="nc-split">
+  <div class="nc-split__text"><p class="nc-eyebrow">Service center</p><h2 class="nc-h2">Professional car service &amp; diagnostics</h2><p class="nc-body">From engine repairs to advanced diagnostics, we keep your performance at its best.</p><a class="nc-btn nc-btn--primary nc-btn--sm" href="#" style="width:fit-content">Learn more</a></div>
+  <div class="nc-split__img" style="background-image:url(https://nextcar.is/brand/service-center.jpg)"></div>
+  <div class="nc-split__text"><p class="nc-eyebrow">Showroom</p><h2 class="nc-h2">Premium workshop equipment</h2><p class="nc-body">See, test and experience the latest technology from leading brands.</p><a class="nc-btn nc-btn--primary nc-btn--sm" href="#" style="width:fit-content">Learn more</a></div>
+  <div class="nc-split__img" style="background-image:url(https://nextcar.is/brand/showroom.jpg)"></div>
+</section>
+
+<main class="nc-container">
+  <div class="ds-block">
+    <p class="ds-label">PRODUCT CARDS: hover = lift + rotating red frame light</p>
+    <div class="ds-cards">
+      <a class="nc-card nc-lift nc-frame-light" href="#" style="text-decoration:none"><img class="nc-card__img" src="https://nextcar.is/brand/categories/vehicle-lifts.png" alt=""><h3 class="nc-h4">Vehicle lifts</h3><p class="nc-body" style="margin:0">2-post, 4-post and scissor lifts.</p><span class="nc-link-arrow">Shop now</span></a>
+      <a class="nc-card nc-lift nc-frame-light" href="#" style="text-decoration:none"><img class="nc-card__img" src="https://nextcar.is/brand/categories/tire-equipment.png" alt=""><h3 class="nc-h4">Tire equipment</h3><p class="nc-body" style="margin:0">Tire machines, balancers and accessories.</p><span class="nc-link-arrow">Shop now</span></a>
+      <a class="nc-card nc-lift nc-frame-light" href="#" style="text-decoration:none"><img class="nc-card__img" src="https://nextcar.is/brand/categories/diagnostic-tools.png" alt=""><h3 class="nc-h4">Diagnostic tools</h3><p class="nc-body" style="margin:0">Advanced diagnostic systems and scanners.</p><span class="nc-link-arrow">Shop now</span></a>
+      <a class="nc-card nc-lift nc-frame-light" href="#" style="text-decoration:none"><img class="nc-card__img" src="https://nextcar.is/brand/categories/compressors.png" alt=""><h3 class="nc-h4">Compressors</h3><p class="nc-body" style="margin:0">High performance air compressors.</p><span class="nc-link-arrow">Shop now</span></a>
+    </div>
+  </div>
+
+  <div class="ds-block">
+    <p class="ds-label">TRUST ROW</p>
+    <div class="nc-trust">
+      <div class="nc-trust__item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="m9 12 2 2 4-4"/></svg><div><h3 class="nc-h4">Warranty</h3><p class="nc-body" style="margin:.25rem 0 0">Full warranty on all products.</p></div></div>
+      <div class="nc-trust__item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M3 14h3a2 2 0 0 1 2 2v3a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-7a9 9 0 0 1 18 0v7a2 2 0 0 1-2 2h-1a2 2 0 0 1-2-2v-3a2 2 0 0 1 2-2h3"/></svg><div><h3 class="nc-h4">Professional support</h3><p class="nc-body" style="margin:.25rem 0 0">Expert advice and technical support.</p></div></div>
+    </div>
+  </div>
+
+  <div class="ds-block">
+    <p class="nc-eyebrow">Questions</p>
+    <h2 class="nc-h2" style="margin-bottom:2rem">Before you order</h2>
+    <div class="nc-faq">
+      <details open><summary>How long will my order take?</summary><p>21 calendar days from the payment clearing.</p></details>
+      <details><summary>Where do I collect the equipment?</summary><p>At Njarðarbraut 3L in Keflavík.</p></details>
+    </div>
+  </div>
+
+  <div class="ds-block">
+    <p class="ds-label">FORM</p>
+    <div class="ds-row" style="max-width:32rem;flex-wrap:nowrap"><input class="nc-input" placeholder="Email address"><button class="nc-btn nc-btn--primary nc-btn--sm">Subscribe</button></div>
+  </div>
+</main>
+
+<a class="nc-fab" href="#">Ask a question</a>
+</body>
+</html>
