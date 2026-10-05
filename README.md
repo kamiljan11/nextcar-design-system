@@ -27,3 +27,25 @@ Dark `#0c0c0e`, one red `#c9302d` (text red `#e24942`), grey body `#9e9ea2`, Bar
 ## Source
 
 Extracted from the production CSS and computed styles of nextcar.is on 2026-09-20. Photos referenced in the preview are served from nextcar.is/brand/.
+
+## Run it locally
+
+There is no build step, no dependencies and no test suite. The preview is static HTML.
+
+```bash
+git clone https://github.com/kamiljan11/nextcar-design-system.git
+cd nextcar-design-system
+python3 -m http.server 8000     # any static server works
+# open http://localhost:8000/preview/index.html
+```
+
+`preview/index.html` loads `tokens/tokens.css` and `components/components.css` by relative path. Opening the file directly (`file://`) also works. The page needs internet access for two things: the Barlow fonts (Google Fonts `@import` in `tokens/tokens.css`) and the photos, which are hotlinked from nextcar.is.
+
+## Tests and deploy
+
+- Tests: none. Check changes by eye in the preview page, in a desktop and a mobile viewport.
+- Deploy: none. The repository is consumed directly (Claude Design pointed at the repo, or files copied into a project). There is no package, no hosting and no CI. See `docs/RUNBOOK.md`.
+
+## Keeping it in sync with the site
+
+The values were extracted once from the live site (2026-09-20). If nextcar.is changes its look, update `tokens/` first, then `components/components.css`, then `DESIGN.md`, and add an entry to `CHANGELOG.md`. The same colours exist in three places (`tokens.css`, `tokens.json`, `tailwind-theme.css`) and must be edited together.
